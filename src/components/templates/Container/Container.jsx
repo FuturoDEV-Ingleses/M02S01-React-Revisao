@@ -4,7 +4,7 @@ import "./Container.css"
 export default function Container({ children, title }) {
   return (
     <div className="Container">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <header>
         <h1>{title}</h1>
