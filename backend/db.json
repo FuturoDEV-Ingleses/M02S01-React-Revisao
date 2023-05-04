@@ -1,0 +1,20 @@
+{
+  "unidades": [
+    {
+      "id": "abc",
+      "apelido": "Unidade 1",
+      "local": "Rua 123",
+      "marca": "Marca 1",
+      "modelo": "Modelo 1",
+      "ativa": true
+    },
+    {
+      "id": "def",
+      "apelido": "Unidade 2",
+      "local": "Rua 2",
+      "marca": "Marca 2",
+      "modelo": "Modelo 2",
+      "ativa": false
+    }
+  ]
+}
