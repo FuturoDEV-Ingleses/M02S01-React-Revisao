@@ -1,0 +1,51 @@
+.unit-register h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #374557;
+  margin-bottom: 30px;
+}
+
+.unit-register form {
+  display: flex;
+  flex-direction: column;
+}
+
+.unit-register input {
+  height: 57px;
+  widht: 633px;
+}
+
+.unit-register label {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #53575d;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.unit-register div.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.unit-register div.checkbox label {
+  margin-bottom: 10px;
+}
+
+.unit-register div.checkbox input {
+  width: 29px;
+  height: 28px;
+  border: 1px solid #000000;
+  margin:  10px 17px 20px 10px;
+}
+
+.unit-register button {
+  margin-bottom: 50px;
+}
