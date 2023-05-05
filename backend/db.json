@@ -15,6 +15,30 @@
       "marca": "Marca 2",
       "modelo": "Modelo 2",
       "ativa": false
+    },
+    {
+      "id": "ghi",
+      "apelido": "Unidade 3",
+      "local": "Rua 3",
+      "marca": "Marca 3",
+      "modelo": "Modelo 3",
+      "ativa": true
+    },
+    {
+      "id": "jkl",
+      "apelido": "Unidade 4444",
+      "local": "Rua 4",
+      "marca": "Marca 4",
+      "modelo": "Modelo 4",
+      "ativa": false
+    },
+    {
+      "apelido": "Unidade 5",
+      "local": "Rua Lala",
+      "marca": "Ferrari",
+      "modelo": "Massa",
+      "ativa": false,
+      "id": "0NqWhjH"
     }
   ]
 }
