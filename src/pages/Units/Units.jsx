@@ -7,9 +7,11 @@ export default function Units() {
 
   return (
     <Container title="Unidades">
-      {openForm === false && <UnitList setOpenForm={setOpenForm} /> }
+      {openForm === false &&
+        <UnitList setOpenForm={setOpenForm} />}
 
-      {openForm === true && <UnitRegister setOpenForm={setOpenForm} />}
+      {openForm === true &&
+        <UnitRegister setOpenForm={setOpenForm} />}
     </Container>
   );
 }

@@ -11,50 +11,79 @@ export default function UnitRegister({ setOpenForm }) {
     ativa: false,
   });
 
-  const formItens = [
-    { label: "Apelido", name: "apelido" },
-    { label: "Local", name: "local" },
-    { label: "Marca", name: "marca" },
-    { label: "Modelo", name: "modelo" },
-  ];
-
   const handleSave = (event) => {
     event.preventDefault();
-    console.log({ form });
 
     setOpenForm(false);
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    console.log({ name, value });
-
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleChangeCheckbox = (event) => {
-    const { name, checked } = event.target;
-    console.log({ name, checked });
-
-    setForm({ ...form, [name]: checked });
   };
 
   return (
     <section className="unit-register">
       <h2>Cadastro de Unidade Geradora</h2>
       <form onSubmit={handleSave}>
-        {formItens.map((item) => (
-          <div key={item.name}>
-            <label htmlFor={item.name}>{item.label}</label>
-            <Input
-              type="text"
-              name={item.name}
-              id={item.name}
-              value={form[item.name]}
-              onChange={handleChange}
-            />
-          </div>
-        ))}
+        <div>
+          <label htmlFor="apelido">Apelido</label>
+          <Input
+            type="text"
+            name="apelido"
+            id="apelido"
+            value={form.apelido}
+            onChange={(e) => {
+              setForm({
+                ...form,
+                apelido: e.target.value,
+              });
+            }}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="local">Local</label>
+          <Input
+            type="text"
+            name="local"
+            id="local"
+            value={form.local}
+            onChange={(e) => {
+              setForm({
+                ...form,
+                local: e.target.value,
+              });
+            }}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="marca">Marca</label>
+          <Input
+            type="text"
+            name="marca"
+            id="marca"
+            value={form.marca}
+            onChange={(e) => {
+              setForm({
+                ...form,
+                marca: e.target.value,
+              });
+            }}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="modelo">Modelo</label>
+          <Input
+            type="text"
+            name="modelo"
+            id="modelo"
+            value={form.modelo}
+            onChange={(e) => {
+              setForm({
+                ...form,
+                modelo: e.target.value,
+              });
+            }}
+          />
+        </div>
 
         <div className="checkbox">
           <input
@@ -62,8 +91,12 @@ export default function UnitRegister({ setOpenForm }) {
             name="ativa"
             id="ativa"
             checked={form.ativa}
-            onChange={handleChangeCheckbox}
-            // defaultChecked={form.ativa}
+            onChange={(e) => { 
+              setForm({
+                ...form,
+                ativa: e.target.checked,
+              });
+            } }
           />{" "}
           <label htmlFor="ativa">Ativo</label>
         </div>

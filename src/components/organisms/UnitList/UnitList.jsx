@@ -75,5 +75,4 @@ export default function UnitList({ setOpenForm }) {
       </Button>
     </section>
   )
-    
 }
