@@ -31,14 +31,14 @@ export default function Navbar() {
         onClick={() => handleClick("/unidades")}
       >
         <img src={unidadeConsumidora} alt="unidade consumidora" />
-        <span>Unidade Consumidora</span>
+        <span>Unidades</span>
       </button>
       <button
         className={isSelected("/cadastro")}
         onClick={() => handleClick("/cadastro")}
       >
         <img src={cadastroEnergiaGerada} alt="cadastro de energia gerada" />
-        <span>Cadastro de Energia Gerada</span>
+        <span>Cadastro de energia gerada</span>
       </button>
     </nav>
   );

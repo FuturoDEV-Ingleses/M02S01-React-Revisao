@@ -15,7 +15,7 @@
   padding: 16px 24px;
   font-size: 18px;
   line-height: 27px;
-  color: #4cbc9a;
+  color: #A098AE;
   background: none;
   border-radius: 20px;
   border: none;
@@ -23,33 +23,20 @@
   min-width: 250px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .Navbar button span {
-  width: 160px;
-  height: 54px;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.Navbar button img {
-  /* alterar cor do svg para branco */
-  /* filter: invert(100%); */
-  /* filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)
-    brightness(100%) contrast(100%); */
+  text-align: left;
 }
 
 .Navbar button.selected {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 700;
   background: #4cbc9a;
   color: #ffffff;
 }
 
 .Navbar button.selected img {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)
-    brightness(100%) contrast(100%);
+  filter: brightness(200%) contrast(500%);
 }
