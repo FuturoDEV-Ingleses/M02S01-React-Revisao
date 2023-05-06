@@ -2,13 +2,13 @@ import "./UnitList.css";
 import { useState, useEffect } from "react";
 import { Button } from "../../index";
 
-export default function UnitList({ setOpenForm }) {
-  const [unidades, setUnidades] = useState([]);
+export default function UnitList({ setOpenForm, setSelectedUnit }) {
+  const [units, setUnits] = useState([]);
 
   const getData = () => {
     fetch("http://localhost:3333/unidades")
       .then((res) => res.json())
-      .then((dados) => setUnidades(dados));
+      .then((dados) => setUnits(dados));
   };
 
   useEffect(() => {
@@ -20,6 +20,11 @@ export default function UnitList({ setOpenForm }) {
       method: "DELETE",
     });
     getData();
+  };
+
+  const handleEdit = (unidade) => {
+    setSelectedUnit(unidade);
+    setOpenForm(true);
   };
 
   return (
@@ -41,7 +46,7 @@ export default function UnitList({ setOpenForm }) {
         </thead>
 
         <tbody>
-          {unidades.map((unidade) => (
+          {units.map((unidade) => (
             <tr key={unidade.id}>
               <td>{unidade.id}</td>
               <td>{unidade.apelido}</td>
@@ -49,7 +54,9 @@ export default function UnitList({ setOpenForm }) {
               <td>{unidade.marca}</td>
               <td>{unidade.modelo}</td>
               <td>
-                <Button classStyle="green">Editar</Button>
+                <Button onClick={() => handleEdit(unidade)} classStyle="green">
+                  Editar
+                </Button>
               </td>
               <td>
                 <Button
@@ -74,5 +81,5 @@ export default function UnitList({ setOpenForm }) {
         Nova Unidade
       </Button>
     </section>
-  )
+  );
 }

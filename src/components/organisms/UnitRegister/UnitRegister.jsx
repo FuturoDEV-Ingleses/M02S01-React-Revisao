@@ -2,26 +2,47 @@ import "./UnitRegister.css";
 import { useState } from "react";
 import { Button, Input } from "../../index";
 
-export default function UnitRegister({ setOpenForm }) {
-  const [form, setForm] = useState({
+export default function UnitRegister({
+  setOpenForm,
+  selectedUnit,
+  setSelectedUnit,
+}) {
+  const emptyState = {
     apelido: "",
     local: "",
     marca: "",
     modelo: "",
     ativa: false,
-  });
+  };
 
-  const handleSave = (event) => {
-    event.preventDefault();
+  const [form, setForm] = useState(selectedUnit || emptyState);
 
+  const createUnit = () => {
     fetch("http://localhost:3333/unidades", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
-    })
+    });
+  };
 
+  const editUnit = () => {
+    fetch(`http://localhost:3333/unidades/${selectedUnit.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+  };
+
+  const handleSave = (event) => {
+    event.preventDefault();
+
+    selectedUnit ? editUnit() : createUnit();
+
+    setSelectedUnit(emptyState);
     setOpenForm(false);
   };
 
@@ -29,83 +50,41 @@ export default function UnitRegister({ setOpenForm }) {
     <section className="unit-register">
       <h2>Cadastro de Unidade Geradora</h2>
       <form onSubmit={handleSave}>
-        <div>
-          <label htmlFor="apelido">Apelido</label>
-          <Input
-            type="text"
-            name="apelido"
-            id="apelido"
-            value={form.apelido}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                apelido: e.target.value,
-              });
-            }}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="local">Local</label>
-          <Input
-            type="text"
-            name="local"
-            id="local"
-            value={form.local}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                local: e.target.value,
-              });
-            }}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="marca">Marca</label>
-          <Input
-            type="text"
-            name="marca"
-            id="marca"
-            value={form.marca}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                marca: e.target.value,
-              });
-            }}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="modelo">Modelo</label>
-          <Input
-            type="text"
-            name="modelo"
-            id="modelo"
-            value={form.modelo}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                modelo: e.target.value,
-              });
-            }}
-          />
-        </div>
+        {["apelido", "local", "marca", "modelo"].map((campo) => (
+          <div key={campo}>
+            <label htmlFor={campo}>
+              {/* primeira letra maiúscula */}
+              {campo.charAt(0).toUpperCase() + campo.slice(1)}
+            </label>
+            <Input
+              required
+              type="text"
+              name={campo}
+              id={campo}
+              value={form[campo]}
+              onChange={(e) => {
+                setForm({
+                  ...form,
+                  [campo]: e.target.value,
+                });
+              }}
+            />
+          </div>
+        ))}
 
         <div className="checkbox">
-          <input
+          <Input
             type="checkbox"
             name="ativa"
             id="ativa"
-            checked={form.ativa}
-            onChange={(e) => { 
+            checked={form?.ativa}
+            onChange={(e) => {
               setForm({
                 ...form,
                 ativa: e.target.checked,
               });
-            } }
-          />{" "}
+            }}
+          />
           <label htmlFor="ativa">Ativo</label>
         </div>
 
