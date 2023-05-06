@@ -14,6 +14,14 @@ export default function UnitRegister({ setOpenForm }) {
   const handleSave = (event) => {
     event.preventDefault();
 
+    fetch("http://localhost:3333/unidades", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    })
+
     setOpenForm(false);
   };
 

@@ -39,6 +39,14 @@
       "modelo": "Massa",
       "ativa": false,
       "id": "0NqWhjH"
+    },
+    {
+      "apelido": "Apelido 7",
+      "local": "Rua 7",
+      "marca": "Marca 7",
+      "modelo": "Modelo 7",
+      "ativa": true,
+      "id": "fNGBnJw"
     }
   ]
 }
