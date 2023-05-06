@@ -2,24 +2,20 @@ import "./UnitList.css";
 import { useState, useEffect } from "react";
 import { Button } from "../../index";
 
+import { getData } from "../../../utils"
+
 export default function UnitList({ setOpenForm, setSelectedUnit }) {
   const [units, setUnits] = useState([]);
 
-  const getData = () => {
-    fetch("http://localhost:3333/unidades")
-      .then((res) => res.json())
-      .then((dados) => setUnits(dados));
-  };
-
   useEffect(() => {
-    getData();
+    getData("unidades", setUnits);
   }, []);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:3333/unidades/${id}`, {
       method: "DELETE",
     });
-    getData();
+    getData("unidades", setUnits);
   };
 
   const handleEdit = (unidade) => {

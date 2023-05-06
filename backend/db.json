@@ -48,5 +48,79 @@
       "ativa": true,
       "id": "fNGBnJw"
     }
+  ],
+  "geracoes": [
+    {
+      "id": "123",
+      "unidade": "abc",
+      "data": "2023-01",
+      "total": 100
+    },
+    {
+      "id": "456",
+      "unidade": "abc",
+      "data": "2023-02",
+      "total": 800
+    },
+    {
+      "id": "789",
+      "unidade": "abc",
+      "data": "2023-03",
+      "total": 360
+    },
+    {
+      "id": "111",
+      "unidade": "abc",
+      "data": "2023-04",
+      "total": 250
+    },
+    {
+      "id": "222",
+      "unidade": "def",
+      "data": "2023-04",
+      "total": 710
+    },
+    {
+      "id": "333",
+      "unidade": "def",
+      "data": "2023-05",
+      "total": 320
+    },
+    {
+      "id": "444",
+      "unidade": "def",
+      "data": "2023-06",
+      "total": 240
+    },
+    {
+      "id": "555",
+      "unidade": "def",
+      "data": "2023-07",
+      "total": 660
+    },
+    {
+      "unidade": "ghi",
+      "data": "2023-03",
+      "total": 100,
+      "id": "8LHGAad"
+    },
+    {
+      "unidade": "ghi",
+      "data": "2023-04",
+      "total": 300,
+      "id": "vtDKmun"
+    },
+    {
+      "unidade": "jkl",
+      "data": "2023-01",
+      "total": 500,
+      "id": "x6s3-O-"
+    },
+    {
+      "unidade": "jkl",
+      "data": "2023-01",
+      "total": 350,
+      "id": "K0ogLoA"
+    }
   ]
 }
